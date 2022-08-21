@@ -1,0 +1,42 @@
+---
+title: 'Channel 13 News'
+layout: ../../layouts/SingleWorkLayout.astro
+year: 2019
+date: '01-08-2019'
+template: 'work'
+draft: false
+slug: '/works/channel-13-news/'
+category: 'Print'
+tags:
+  - 'Found Imagery'
+  - 'Privacy'
+description: 'A recent study found that, at over 5,000 words, the “Terms of Use” for Instagram requires a postgraduate reading level to comprehend. The paragraph in this artwork was taken from an online chain letter recently posted to Instagram by many prominent celebrities, politicians, artists, and everyday people. The text first went viral on Facebook in 2012 and has since lived a life of reposting, copy-pasting, screenshotting and creative adaptation. Though the information the post contains is not factual, it points to fears and beliefs held by those who continue to share it.'
+frontImage0: './src/pages/works/images/channel13news-1.jpg'
+frontImage1: './src/pages/works/images/channel13news-4.jpg'
+frontPage: true
+showName: 'MFA Inclusive Exhibition'
+showDate: '-September __, 2019'
+showLocation: '-Lightwell'
+showCity: 'Norman, OK'
+medium: 'Vinyl Banner'
+priority: 6
+---
+
+import WorkGallery from '../../components/WorkGallery.astro';
+import WorkImage from '../../components/WorkImage.astro';
+
+import img1 from './images/channel13news-1.jpg';
+import img2 from './images/channel13news-2.jpg';
+import img3 from './images/channel13news-4.jpg';
+import img4 from './images/channel13news-3.jpg';
+
+<WorkGallery>
+  <WorkImage
+    src={img1}
+    alt="Channel 13 News: Vinyl banner installed in gallery."
+  />
+  <WorkImage src={img2} alt="Closer in on wall." />
+  <WorkImage src={img3} alt="Detail." />
+  <WorkImage src={img4} alt="With me, for scale." />
+</WorkGallery>
+'

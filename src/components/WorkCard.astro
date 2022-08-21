@@ -1,0 +1,40 @@
+---
+import { Image, Picture } from "@astrojs/image/components";
+
+export interface Props {
+	work: any;
+	index: number;
+}
+
+const { work, index } = Astro.props as Props;
+const {
+	title,
+	description,
+	frontImage0,
+	frontImage1,
+	frontImage2,
+	frontImage3,
+} = work.frontmatter;
+
+// list of all frontImages, filtering out undefined.
+const frontImages = [frontImage0, frontImage1, frontImage2, frontImage3].filter(
+	(e) => !!e
+);
+---
+
+{
+	frontImages.map((frontImage) => (
+		<div
+			class={`work-card work-${index} bg-zinc-900 bg-gradient-to-b from-stone-700 to-zinc-800 transition-opacity hover:opacity-95`}
+		>
+			<a href={work.url} class="work-link">
+				<Image
+					src={frontImage}
+					width={416}
+					aspectRatio={1}
+					alt={title}
+				/>
+			</a>
+		</div>
+	))
+}

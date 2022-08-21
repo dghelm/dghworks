@@ -1,0 +1,47 @@
+---
+title: 'Generative Towers VR Space'
+layout: ../../layouts/SingleWorkLayout.astro
+year: 2019
+date: '01-01-2019'
+template: 'work'
+draft: false
+slug: '/works/generative-towers-vr-space/'
+category: 'Digital'
+tags:
+  - 'Virtual Reality'
+  - 'Machine Learning'
+  - 'GANs'
+  - 'Architecture'
+  - 'UX'
+description: "In this Virtual Reality environment, the viewer gets to collaborate with a machile learning model to generate new images of towers. The piece is a tool without a clear purpose, lying somewhere between a creative tool for an artist, a sketching tool for an architect and an exploratory tool for educators. To exaggerate the virtual creation space, the user can publish their creations to the project's Instagram account alongside a photo of themself in the VR space."
+frontImage0: './src/pages/works/images/generativetowersvr-2.jpg'
+frontImage1: './src/pages/works/images/generativetowersvr-3.jpg'
+frontPage: true
+showName: 'Building & Training'
+showDate: ''
+showLocation: ''
+showCity: 'Norman, OK'
+medium: ''
+priority: 10
+---
+
+import WorkGallery from '../../components/WorkGallery.astro';
+import WorkImage from '../../components/WorkImage.astro';
+
+import img1 from './images/generativetowersvr-1.jpg';
+import img2 from './images/generativetowersvr-2.jpg';
+import img3 from './images/generativetowersvr-3.jpg';
+import img4 from './images/generativetowersvr-4.jpg';
+
+<WorkGallery>
+  <WorkImage
+    src={img1}
+    alt="Installed with projection accompanying interior VR space for viewer to results of collaborative work."
+  />
+  <WorkImage
+    src={img2}
+    alt='Another view, as installed in "Building & Training"'
+  />
+  <WorkImage src={img3} alt="View inside the VR environment." />
+  <WorkImage src={img4} alt="View inside the VR environment." />
+</WorkGallery>

@@ -1,0 +1,105 @@
+---
+import About from "./About.astro";
+import Navigation from "./Navigation.astro";
+import Socials from "./Socials.astro";
+import { Picture, Image } from "@astrojs/image/components";
+
+let techs = [
+	{ title: "Skynet", url: "https://skynetlabs.com/" },
+	{ title: "Astro", url: "https://astro.build/" },
+	{ title: "Tailwind", url: "https://tailwindcss.com/" },
+];
+
+let domains = [
+	{ title: "dgh.works", url: "https://dgh.works/" },
+	{ title: "dghelm.eth", url: "https://dghelm.eth.limo/" },
+	{ title: "dghelm/", url: "https://dghelm.hns.is/" },
+];
+---
+
+<header
+	class="bg-neutral-100 lg:fixed lg:inset-y-0 lg:left-0 lg:flex lg:w-112 lg:items-start lg:overflow-y-auto xl:w-120"
+>
+	<div
+		class="hidden h-full bg-gradient-to-b from-stone-600 to-zinc-800 lg:sticky lg:top-0 lg:flex lg:w-16 lg:flex-none lg:items-center lg:whitespace-nowrap lg:py-12 lg:text-sm lg:leading-7 lg:[writing-mode:vertical-rl]"
+	>
+		<span class="font-mono text-stone-300">Built with</span>
+		<span class="mt-6 flex gap-6 font-bold text-stone-100">
+			{
+				techs.map((tech, hostIndex) => (
+					<>
+						{hostIndex !== 0 && (
+							<span
+								aria-hidden="true"
+								class="text-stone-400"
+							>
+								/
+							</span>
+						)}
+						<a
+							href={tech.url}
+							target="_blank"
+						>
+							{tech.title}
+						</a>
+					</>
+				))
+			}
+		</span>
+		<span class="font-mono text-stone-300 mt-28">Hosted at</span>
+		<span class="mt-6 flex gap-6 font-bold text-stone-100">
+			{
+				domains.map((domain, hostIndex) => (
+					<>
+						{hostIndex !== 0 && (
+							<span
+								aria-hidden="true"
+								class="text-stone-400"
+							>
+								/
+							</span>
+						)}
+						<a
+							href={domain.url}
+							target="_blank"
+						>
+							{domain.title}
+						</a>
+					</>
+				))
+			}
+		</span>
+	</div>
+	<div
+		class="relative z-10 mx-auto px-4 pb-4 pt-10 sm:px-6 md:max-w-2xl md:px-4 lg:min-h-full lg:flex-auto lg:border-x lg:border-slate-200 lg:py-12 lg:px-8 xl:px-12"
+	>
+		<a
+			href="/"
+			class="relative mx-auto block w-48 overflow-hidden bg-slate-200 shadow-xl shadow-slate-200 sm:w-64 lg:w-auto"
+			aria-label="Homepage"
+		>
+			<Picture
+				src={import("../images/headshot.jpg")}
+				class="w-full"
+				alt="Daniel Helm"
+				widths={[320, 256, 192]}
+				sizes="(min-width: 1024px) 48rem, (min-width: 640px) 16rem, 12rem"
+			/>
+			<div
+				class="absolute inset-0 ring-1 ring-inset ring-black/10"
+			>
+			</div>
+		</a>
+		<div class="mt-10 text-center lg:mt-12 lg:text-left">
+			<p class="text-xl font-bold text-stone-900">
+				<a href="/">Daniel Helm</a>
+			</p>
+			<p class="text-md font-medium leading-8 text-stone-600">
+				Developer Evangelist // Artist
+			</p>
+		</div>
+		<Navigation />
+		<About class="mt-12 hidden lg:block" />
+		<Socials />
+	</div>
+</header>

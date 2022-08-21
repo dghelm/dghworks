@@ -1,0 +1,66 @@
+---
+title: 'Crossing the City Series'
+layout: ../../layouts/SingleWorkLayout.astro
+year: 2019
+date: '01-08-2019'
+template: 'work'
+draft: false
+slug: '/works/crossing-the-city/'
+category: 'Print'
+tags:
+  - 'Book'
+  - 'Print'
+  - 'Custom Software'
+  - 'Found Video'
+  - 'Architecture'
+description: 'The imagery in this series come from video footage of people moving through various urban landscapes. Processed into ultra-long panoramas and arranged in a book format or cropped for large-format digital prints, the images slow movement through space and provide an alternative for how we see the city.'
+frontImage0: './src/pages/works/images/crossingthecity-1.jpg'
+frontImage1: './src/pages/works/images/crossingthecity-2.jpg'
+frontImage2: './src/pages/works/images/crossingthecity-8.jpg'
+frontImage3: './src/pages/works/images/crossingthecity-14.jpg'
+frontPage: true
+showName: 'Building & Training'
+showDate: ''
+showLocation: ''
+showCity: 'Norman, OK'
+# medium: ''
+priority: 4
+---
+
+import WorkGallery from '../../components/WorkGallery.astro';
+import WorkImage from '../../components/WorkImage.astro';
+
+import img1 from './images/crossingthecity-1.jpg';
+import img2 from './images/crossingthecity-2.jpg';
+import img3 from './images/crossingthecity-3.jpg';
+import img4 from './images/crossingthecity-4.jpg';
+import img5 from './images/crossingthecity-5.jpg';
+import img6 from './images/crossingthecity-6.jpg';
+import img7 from './images/crossingthecity-7.jpg';
+import img8 from './images/crossingthecity-8.jpg';
+import img9 from './images/crossingthecity-9.jpg';
+import img10 from './images/crossingthecity-10.jpg';
+import img11 from './images/crossingthecity-11.jpg';
+import img12 from './images/crossingthecity-12.jpg';
+import img13 from './images/crossingthecity-14.jpg';
+import img14 from './images/crossingthecity-13.jpg';
+
+<WorkGallery>
+  <WorkImage
+    src={img1}
+    alt="Digital prints, with books, as installed in the O.U. College of Architecture"
+  />
+  <WorkImage src={img2} alt="Tokyo. Prints with YouTube video of train-ride." />
+  <WorkImage src={img3} alt="Another shot of digital prints, installed." />
+  <WorkImage src={img4} alt="Pyongyang. Digital prints and book." />
+  <WorkImage src={img5} alt="Paris. Digital prints and book." />
+  <WorkImage src={img6} alt="Las Vegas. Digital prints and book." />
+  <WorkImage src={img7} alt="Venice. Digital prints and book." />
+  <WorkImage src={img8} alt="Book spread of Venice." />
+  <WorkImage src={img9} alt="Book spread of Las Vegas." />
+  <WorkImage src={img10} alt="Book spread of Pyongyang." />
+  <WorkImage src={img11} alt="Book spread of Paris." />
+  <WorkImage src={img12} alt="Book spread of Tokyo." />
+  <WorkImage src={img13} alt="Tokyo book." />
+  <WorkImage src={img14} alt="Tokyo book." />
+</WorkGallery>

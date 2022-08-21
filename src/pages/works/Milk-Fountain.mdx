@@ -1,0 +1,46 @@
+---
+title: 'Milk Fountain'
+layout: ../../layouts/SingleWorkLayout.astro
+year: 2017
+date: '01-01-2019'
+template: 'work'
+draft: true
+slug: '/works/milk-fountain/'
+category: '3D'
+tags:
+  - 'Milk'
+  - '3D Animation'
+description: 'This fountain and an accompanying animation were created for the "Appetite" show curated by Melissa Jacobs. I''d been thinking a lot about milk.'
+frontImage0: './src/pages/works/images/milkfountain-1.jpg'
+frontImage1: './src/pages/works/images/milkfountain-6.jpg'
+frontPage: true
+showName: 'Appetite'
+showDate: ''
+showLocation: 'O.U. School of Visual Art Grad Research Annex'
+showCity: 'Norman, OK'
+medium: ''
+priority: 14
+---
+
+import WorkGallery from '../../components/WorkGallery.astro';
+import WorkImage from '../../components/WorkImage.astro';
+
+import img1 from './images/milkfountain-1.jpg';
+import img2 from './images/milkfountain-2.jpg';
+import img3 from './images/milkfountain-3.jpg';
+import img4 from './images/milkfountain-4.jpg';
+import img5 from './images/milkfountain-5.jpg';
+import img6 from './images/milkfountain-6.jpg';
+import img7 from './images/milkfountain-7.jpg';
+import img8 from './images/milkfountain-8.jpg';
+
+<WorkGallery>
+  <WorkImage src={img1} alt='"Milk Fountain" installed in gallery.' />
+  <WorkImage src={img2} alt="Detail of milk flowing." />
+  <WorkImage src={img3} alt="Kids really enjoyed the piece." />
+  <WorkImage src={img4} alt="Installed with accompanying animation." />
+  <WorkImage src={img5} alt="More people enjoying." />
+  <WorkImage src={img6} alt="Animation still." />
+  <WorkImage src={img7} alt="Animation still." />
+  <WorkImage src={img8} alt="Animation still." />
+</WorkGallery>

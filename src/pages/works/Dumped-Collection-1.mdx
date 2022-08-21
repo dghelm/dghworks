@@ -1,0 +1,47 @@
+---
+title: 'Dumped Collection #1'
+layout: ../../layouts/SingleWorkLayout.astro
+year: 2019
+date: '01-01-2019'
+template: 'work'
+draft: false
+slug: '/works/dumped-collection-1/'
+category: '3D'
+tags:
+  - 'Arduino'
+  - 'Electronics'
+  - 'Privacy'
+  - 'Found Data'
+description: 'In January 2019, a massive collection of private email addresses and passwords were dumped publically onto the internet under the label "Collection #1." Here, a small, U.S.-based portion of the over 700 million leaked email addresses are presented along with their password.'
+frontImage0: './src/pages/works/images/dumpedcollection1-1.jpg'
+frontImage1: './src/pages/works/images/dumpedcollection1-2.jpg'
+frontImage2: './src/pages/works/images/dumpedcollection1-6.jpg'
+frontPage: true
+showName: '-Student Show'
+showDate: '-May 2019?'
+showLocation: 'Fred Jones Jr. Museum of Art'
+showCity: 'Norman, OK'
+medium: ''
+awards: 'Visual Art Student Association Award of Excellence'
+priority: 4
+---
+
+import WorkGallery from '../../components/WorkGallery.astro';
+import WorkImage from '../../components/WorkImage.astro';
+
+import img1 from './images/dumpedcollection1-1.jpg';
+import img2 from './images/dumpedcollection1-2.jpg';
+import img3 from './images/dumpedcollection1-3.jpg';
+import img4 from './images/dumpedcollection1-4.jpg';
+import img5 from './images/dumpedcollection1-5.jpg';
+
+<WorkGallery>
+  <WorkImage
+    src={img1}
+    alt='"Dumped Collection #1" installed in Fred Jones Jr. museum of art, as part of a curated student exhibition.'
+  />
+  <WorkImage src={img2} alt="Details showing hardware and LCD screens." />
+  <WorkImage src={img3} alt="As installed in gallery." />
+  <WorkImage src={img4} alt="Detail of email side." />
+  <WorkImage src={img5} alt="Detail of password side." />
+</WorkGallery>
