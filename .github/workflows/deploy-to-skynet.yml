@@ -17,7 +17,7 @@ jobs:
       - run: npm install
       - run: npm run build
 
-      - name: 'Deploy to Skynet'
+      - name: 'Deploy to Skynetpro'
         uses: SkynetLabs/deploy-to-skynet-action@v2
         with:
           upload-dir: dist
@@ -25,3 +25,9 @@ jobs:
           skynet-api-key: ${{ secrets.SKYNET_API_KEY }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
           registry-seed: ${{ secrets.SKYNET_REGISTRY_SEED || '' }}
+
+      - name: 'Deploy to Siasky'
+        uses: SkynetLabs/deploy-to-skynet-action@v2
+        with:
+          upload-dir: dist
+          github-token: ${{ secrets.GITHUB_TOKEN }}
