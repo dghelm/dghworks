@@ -19,7 +19,7 @@ const navigation = [
 ];
 ---
 
-<nav class="text-base lg:text-sm mt-6 space-y-9">
+<nav class="text-base lg:text-sm mt-6 space-y-9" id="page-nav">
 	<ul role="list">
 		{
 			navigation.map((section) => (
@@ -27,10 +27,14 @@ const navigation = [
 					<h2
 						class={clsx(
 							"lg:text-lg font-display font-medium text-neutral-900 mt-2 underline-offset-4",
-							pathname.includes(section.href) ? "underline" : "hover:underline"
+							pathname.includes(section.href)
+								? "underline"
+								: "hover:underline"
 						)}
 					>
-						<a href={section.href}>{section.title}</a>
+						<a href={section.href} data-swup-preload>
+							{section.title}
+						</a>
 					</h2>
 					{pathname.includes(section.href) && (
 						<ul
@@ -44,7 +48,7 @@ const navigation = [
 										class={clsx(
 											"block w-full pl-3.5 before:pointer-events-none before:absolute before:-left-1 before:top-1/2 before:h-1.5 before:w-1.5 before:-translate-y-1/2 before:rounded-full",
 											link.href === pathname
-												? "font-semibold text-neutral-500 before:bg-neutral-500"
+												? "font-semibold text-neutral-800 before:bg-stone-400"
 												: "text-stone-600 before:hidden before:bg-stone-300 hover:text-stone-600 hover:before:block"
 										)}
 									>

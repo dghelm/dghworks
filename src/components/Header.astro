@@ -18,7 +18,7 @@ let domains = [
 ---
 
 <header
-	class="bg-neutral-100 lg:fixed lg:inset-y-0 lg:left-0 lg:flex lg:w-112 lg:items-start lg:overflow-y-auto xl:w-120"
+	class="z-10 bg-neutral-100 lg:fixed lg:inset-y-0 lg:left-0 lg:flex lg:w-112 lg:items-start lg:overflow-y-auto xl:w-120"
 >
 	<div
 		class="hidden h-full bg-gradient-to-b from-stone-600 to-zinc-800 lg:sticky lg:top-0 lg:flex lg:w-16 lg:flex-none lg:items-center lg:whitespace-nowrap lg:py-12 lg:text-sm lg:leading-7 lg:[writing-mode:vertical-rl]"
@@ -75,7 +75,7 @@ let domains = [
 	>
 		<a
 			href="/"
-			class="relative mx-auto block w-48 overflow-hidden bg-slate-200 shadow-xl shadow-slate-200 sm:w-64 lg:w-auto"
+			class="relative mx-auto block w-48 overflow-hidden shadow-xl shadow-stone-200 sm:w-64 lg:w-auto rounded-t-full hover:translate-y-0.5 transition-all"
 			aria-label="Homepage"
 		>
 			<Picture
@@ -86,7 +86,7 @@ let domains = [
 				sizes="(min-width: 1024px) 48rem, (min-width: 640px) 16rem, 12rem"
 			/>
 			<div
-				class="absolute inset-0 ring-1 ring-inset ring-black/10"
+				class="absolute mix-blend-color inset-0 ring-1 ring-inset ring-black/10 bg-gradient-to-b from-stone-600 to-zinc-800 opacity-80 hover:opacity-0"
 			>
 			</div>
 		</a>
