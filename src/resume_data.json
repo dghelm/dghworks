@@ -1,0 +1,187 @@
+{
+  "basics": {
+    "name": "Daniel Helm",
+    "label": "Developer Evangelist",
+    "image": "",
+    "email": "dan.helm@gmail.com",
+    "phone": "(918) 724-4957",
+    "url": "https://dgh.works",
+    "summary": "Strong in creative problem solving, especially in contexts where interaction or communication with an audience is needed. Excels at research & development and rapid prototyping, both for meeting project needs and creatively exploring the application of new and advanced technologies. Self-motivated with a wide-ranging and rarely-satisfied curiosity. Adapts well to various team contexts, though naturally gravitates towards leadership and cross-team roles. Enjoys discussing and explaining complex topics, both technical and cultural. Has worked in projects for decentralized web infrastructure, law firms, libraries, fine arts, hospitality, resource extraction and non-profits.",
+    "location": {
+      "city": "Oklahoma City",
+      "countryCode": "US",
+      "region": "Oklahoma"
+    },
+    "profiles": [
+      {
+        "network": "Github",
+        "username": "dghelm",
+        "url": "https://github.com/dghelm"
+      },
+      {
+        "network": "Twitter",
+        "username": "dghelm",
+        "url": "https://twitter.com/dghelm"
+      },
+      {
+        "network": "LinkedIn",
+        "username": "dghelm",
+        "url": "https://www.linkedin.com/in/dghelm/"
+      },
+      {
+        "network": "Telegram",
+        "username": "dghelm",
+        "url": "https://t.me/dghelm"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Skynet Labs",
+      "position": "Developer Evangelist",
+      "url": "https://skynetlabs.com",
+      "startDate": "2020-10-01",
+      "endDate": "2022-09-01",
+      "summary": "Led Developer Relations and developer-facing growth and product initiatives for a seed-stage startup building decentralized infrastructure for data storage.",
+      "highlights": [
+        "Oversaw 15 hackathons with over 10 partners, pulling in over 275 developer projects",
+        "Wrote and delivered talks and workshops at developer-focused events, including ETHDenver and ETHNewYork",
+        "Sought out technical partnerships and grants, collaborating with project developers and achieving high-profile partners and grant funding for over $300k",
+        "Actively helped design, architect and build developer and user-facing products",
+        "Organized in-person and online events and meet-ups, including running monthly developer calls",
+        "Rebuilt and oversaw the project's documentation, creating distinct spaces for different audiences",
+        "Created processes for surveying developers and aggregated product data and platform analytics to generate dashboards for better product and audience insight",
+        "Implemented and supervised a Summer Developer Program, sponsoring over 20 hackers for 12 weeks to build open-source projects",
+        "Provided critical feedback to the developer team through building closer relationships with community developers and partner projects, establishing a system for beta testing new products whlie doing QA in the course of coding demos, developing workshops and writing documentation",
+        "Engaged with potential partners, representing Skynet Labs and encouraging technical integrations, resulting in Skynet integration into projects like 1inch, ENS, Metamask, Cloudflare, Ethers.js, Namebase and Nervos."
+      ]
+    },
+    {
+      "name": "Partner",
+      "position": "Dither",
+      "url": "https://dithermade.com",
+      "startDate": "2013-04-01",
+      "endDate": "2020-10-01",
+      "summary": "Co-founded a small business focused on web development and digital branding, where I primarily used PHP and Wordpress as a framework for building identity and e-commerce websites. Responsible for back-end coding, server maintenance, R&D and book-keeping. Also did video branding while pursuing personal projects such as producing a live music video web series and a feature-length documentary. Projects have now expanded to include building custom applications for navigating large data sources, large-scale video processing and developing custom online-and-offline technology solutions for clients.",
+      "highlights": [
+        "Devised and developed custom software for helping bring a class-action case that successfully identified class members not included in data from the counter-party's initial discovery responses. This involved a custom Python pipeline for scraping public court records, OCRing scanned documents and creating a React front-end allowing attorneys to explore datasets",
+        "Co-created The Real Enemy, a long-form documentary which screened at film festivals in the US and France and made Reddit's frontpage"
+      ]
+    },
+    {
+      "name": "OU School of Visual Arts",
+      "position": "Graduate Teaching Assistant",
+      "url": "https://www.ou.edu/finearts/visual-arts",
+      "startDate": "2017-08-01",
+      "endDate": "2020-05-01",
+      "summary": "Teaching technical and conceptual classes in the Art, Technology and Culture department. Developed coursework for the undergraduate level in video games, visual programming along with video and other time-based mediums.",
+      "highlights": []
+    },
+    {
+      "name": "Cheap Rent",
+      "position": "Partner",
+      "url": "https://cheaprent.co",
+      "startDate": "2014-01-01",
+      "endDate": "2016-01-01",
+      "summary": "Co-founded a small art-oriented print shop focusing on shirts, art prints, and events across Oklahoma. Responsible for developing our web presence, digital processing of imagery, R&D for the print shop and its processes and managing the business side of things.",
+      "highlights": []
+    },
+    {
+      "name": "Delo Creative",
+      "position": "Generalist",
+      "url": "https://www.delocreative.com",
+      "startDate": "2011-06-01",
+      "endDate": "2013-04-01",
+      "summary": "Jack-of-all-trades role with a small production group creating video and branding content for local clients as well as bands such as The Flaming Lips, Dr. Dog, Amanda Palmer, and BRONCHO. Also responsible for server maintenance and R&D around emerging video, audio and web technologies.",
+      "highlights": []
+    },
+    {
+      "name": "OU Information Technology",
+      "position": "IT Specialist",
+      "url": "https://www.ou.edu/ouit",
+      "startDate": "2006-09-01",
+      "endDate": "2007-12-01",
+      "summary": "Phone-based tech support, requiring strong communication skills and quickly recognizing a user’s understanding of their problem.",
+      "highlights": []
+    }
+  ],
+  "volunteer": [
+    {
+      "organization": "Organization",
+      "position": "Volunteer",
+      "url": "https://organization.com/",
+      "startDate": "2012-01-01",
+      "endDate": "2013-01-01",
+      "summary": "Description…",
+      "highlights": ["Awarded 'Volunteer of the Month'"]
+    }
+  ],
+  "education": [
+    {
+      "institution": "University of Oklahoma",
+      "url": "https://www.ou.edu/finearts",
+      "area": "Art, Technology and Culture",
+      "studyType": "Master of Fine Arts",
+      "startDate": "2017-01-01",
+      "endDate": "2020-01-01"
+    },
+    {
+      "institution": "University of Oklahoma",
+      "url": "https://www.ou.edu/coe/cs",
+      "area": "Computer Science",
+      "studyType": "Bachelor of Science",
+      "startDate": "2014-01-01",
+      "endDate": "2019-01-01",
+      "score": "Summa cum Laude"
+    },
+    {
+      "institution": "University of Oklahoma",
+      "url": "https://ou.edu/cas/",
+      "area": "Philosophy & Linguistics, minor in French",
+      "studyType": "Bachelor",
+      "startDate": "2006-01-01",
+      "endDate": "2011-01-01",
+      "score": "Magna cum Laude"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Digital Media",
+      "level": "Master",
+      "keywords": [
+        "Adobe Photoshop",
+        "Adobe Illustrator",
+        "Adobe Premiere",
+        "Adobe After Effects",
+        "Adobe Audition",
+        "Nuke",
+        "Cinema4D",
+        "Arnold & VRay"
+      ]
+    }
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "fluency": "Native speaker"
+    },
+    {
+      "language": "French",
+      "fluency": "Conversational Intermediate"
+    }
+  ],
+  "projects": [
+    {
+      "name": "",
+      "description": "",
+      "highlights": [],
+      "keywords": [],
+      "startDate": "2019-01-01",
+      "endDate": "2021-01-01",
+      "url": "",
+      "roles": [],
+      "entity": "",
+      "type": ""
+    }
+  ]
+}

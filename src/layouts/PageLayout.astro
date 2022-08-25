@@ -1,0 +1,16 @@
+---
+import Layout from "../layouts/Layout.astro";
+const { frontmatter } = Astro.props;
+const { title } = frontmatter;
+---
+
+<Layout title={frontmatter.title}>
+	<main
+		class="max-w-5xl xl:px-24 md:px-12 my-6 lg:my-12 mx-auto px-6 prose lg:prose-lg md:pose-base pose-sm prose-neutral"
+	>
+		<h1 class="font-bold xl:text-5xl md:text-4xl text-3xl">
+			{title}
+		</h1>
+		<slot />
+	</main>
+</Layout>

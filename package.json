@@ -24,6 +24,8 @@
     "@tailwindcss/line-clamp": "^0.4.0",
     "@tailwindcss/typography": "^0.5.4",
     "clsx": "^1.2.1",
+    "dayjs": "^1.11.5",
+    "mermaid.cli": "^0.3.6",
     "svg-inline-loader": "^0.8.2",
     "swup": "^2.0.18"
   }
