@@ -37,58 +37,43 @@ const navigation = [
 				// page or one of the subpages.
 				const sectionExpand =
 					pathname === section.href ||
-					section.links
-						.map((value) => value.href)
-						.includes(pathname);
+					section.links.map((value) => value.href).includes(pathname);
 
 				return (
 					<li class="mb-4">
 						<h2
 							class={clsx(
 								"lg:text-lg font-display font-medium text-neutral-900 mt-2 underline-offset-4",
-								sectionExpand
-									? "underline"
-									: "hover:underline"
+								sectionExpand ? "underline" : "hover:underline"
 							)}
 						>
-							<a
-								href={
-									section.href
-								}
-								data-swup-preload
-							>
-								{section.title}
-							</a>
+							{section.title === "Experience" && section.title}
+							{section.title !== "Experience" && (
+								<a href={section.href} data-swup-preload>
+									{section.title}
+								</a>
+							)}
 						</h2>
-						{sectionExpand && (
+						{(sectionExpand || section.title === "Experience") && (
 							<ul
 								role="list"
 								class="mt-2 space-y-2 border-l-2 border-neutral-100 lg:mt-4 lg:space-y-4 lg:border-neutral-200"
 							>
-								{section.links.map(
-									(
-										link
-									) => (
-										<li class="relative">
-											<a
-												href={
-													link.href
-												}
-												class={clsx(
-													"block w-full pl-3.5 before:pointer-events-none before:absolute before:-left-1 before:top-1/2 before:h-1.5 before:w-1.5 before:-translate-y-1/2 before:rounded-full",
-													link.href ===
-														pathname
-														? "font-semibold text-neutral-800 before:bg-stone-400"
-														: "text-stone-600 before:hidden before:bg-stone-300 hover:text-stone-600 hover:before:block"
-												)}
-											>
-												{
-													link.title
-												}
-											</a>
-										</li>
-									)
-								)}
+								{section.links.map((link) => (
+									<li class="relative">
+										<a
+											href={link.href}
+											class={clsx(
+												"block w-full pl-3.5 before:pointer-events-none before:absolute before:-left-1 before:top-1/2 before:h-1.5 before:w-1.5 before:-translate-y-1/2 before:rounded-full",
+												link.href === pathname
+													? "font-semibold text-neutral-800 before:bg-stone-400"
+													: "text-stone-600 before:hidden before:bg-stone-300 hover:text-stone-600 hover:before:block"
+											)}
+										>
+											{link.title}
+										</a>
+									</li>
+								))}
 							</ul>
 						)}
 					</li>
