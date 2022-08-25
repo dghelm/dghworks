@@ -12,14 +12,18 @@ const { basics, work, education, languages, projects, volunteer } = resumeData;
 		class="max-w-5xl xl:px-24 md:px-12 my-6 lg:my-12 mx-auto px-6 prose prose-sm lg:prose-base prose-neutral"
 	>
 		<section class="not-prose">
-			<h1 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-1 lg:mb-4">
+			<h1
+				class="text-2xl md:text-3xl lg:text-4xl font-bold mb-1 lg:mb-4"
+			>
 				{basics.name}
 			</h1>
 			<h2 class="text-lg lg:text-xl font-medium mb-1 lg:mb-4">
 				{basics.label}
 			</h2>
 			<div class="font-medium">
-				{basics.location.city}, {basics.location.region},
+				{basics.location.city}, {
+					basics.location.region
+				},
 				{basics.location.countryCode}A
 			</div>
 			<div>
@@ -31,7 +35,11 @@ const { basics, work, education, languages, projects, volunteer } = resumeData;
 				{
 					basics.profiles.map((item) => (
 						<span class="mr-6">
-							<a href={item.url} target="_blank" class="hover:underline">
+							<a
+								href={item.url}
+								target="_blank"
+								class="hover:underline"
+							>
 								{item.network}
 							</a>
 						</span>
@@ -51,19 +59,40 @@ const { basics, work, education, languages, projects, volunteer } = resumeData;
 						<div class="mb-12">
 							<h3>
 								{item.position},
-								<span class="font-normal">{item.name}</span>
+								<span class="font-normal">
+									{
+										item.name
+									}
+								</span>
 							</h3>
 							<h4>
-								{dayjs(item.startDate).format("MMM YYYY")}-
-								{dayjs(item.endDate).format("MMM YYYY")}
+								{dayjs(
+									item.startDate
+								).format(
+									"MMM YYYY"
+								)}
+								-
+								{dayjs(
+									item.endDate
+								).format(
+									"MMM YYYY"
+								)}
 							</h4>
 							<p>{item.summary}</p>
 							{item.highlights && (
 								// <h4 class="font-normal">Highlights</h4>
 								<ul>
-									{item.highlights.map((highlight) => (
-										<li>{highlight}</li>
-									))}
+									{item.highlights.map(
+										(
+											highlight
+										) => (
+											<li>
+												{
+													highlight
+												}
+											</li>
+										)
+									)}
 								</ul>
 							)}
 						</div>
@@ -78,17 +107,34 @@ const { basics, work, education, languages, projects, volunteer } = resumeData;
 					education.map((item) => (
 						<div>
 							<h3>
-								{item.studyType} - {item.area}
+								{item.studyType}{" "}
+								- {item.area}
 							</h3>
 							<h4>
-								{item.institution},
-								<span class="font-normal">
-									{dayjs(item.startDate).format("MMM YYYY")}-
-									{dayjs(item.endDate).format("MMM YYYY")}
+								{
+									item.institution
+								}
+								,
+								<span class="font-normal pl-1">
+									{dayjs(
+										item.startDate
+									).format(
+										"MMM YYYY"
+									)}
+									-
+									{dayjs(
+										item.endDate
+									).format(
+										"MMM YYYY"
+									)}
 								</span>
 							</h4>
 							{item.score && (
-								<h4 class="font-normal italic">{item.score}</h4>
+								<h4 class="font-normal italic">
+									{
+										item.score
+									}
+								</h4>
 							)}
 						</div>
 					))
@@ -103,7 +149,11 @@ const { basics, work, education, languages, projects, volunteer } = resumeData;
 						<div>
 							<h4>
 								{item.language},
-								<span class="font-normal">{item.fluency}</span>
+								<span class="font-normal">
+									{
+										item.fluency
+									}
+								</span>
 							</h4>
 						</div>
 					))
