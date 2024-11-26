@@ -1,85 +1,75 @@
 ---
 import clsx from 'clsx';
 import { getCollection } from 'astro:content';
+import { NAVIGATION_CONFIG } from '../config/navigation';
+import type { NavigationSection } from '../types/navigation';
+
 const { pathname } = Astro.url;
 
-// Get works from content collection instead of glob
 const works = await getCollection('works');
 works.sort((a, b) => a.data.priority - b.data.priority);
 
-// Create list formatted for `navigation` value
-const worksLinks = works.map((work) => {
-  return {
-    href: `/works/${work.slug}`,
-    title: work.data.title,
-  };
-});
+const worksLinks = works.map((work) => ({
+  href: `/works/${work.slug}`,
+  title: work.data.title,
+}));
 
-// Define Navigation sections and sub-links
-const navigation = [
-  {
-    title: 'Experience',
-    href: '/experience',
-    links: [
-      { href: '/resume', title: 'Resume' },
-      { href: '/talks', title: 'Talks' },
-      { href: '/artist-cv', title: 'Artist CV' },
-    ],
-  },
-  { title: 'Artwork', href: '/works', links: [...worksLinks] },
-];
+const navigation: NavigationSection[] = NAVIGATION_CONFIG.map((section) =>
+  section.title === 'Artwork' ? { ...section, links: worksLinks } : section
+);
 ---
 
-<nav class="text-base lg:text-sm mt-6 space-y-9" id="page-nav">
+<nav
+  class="text-base lg:text-sm mt-6 space-y-9"
+  transition:persist="navigation"
+  data-current-path={pathname}
+>
   <ul role="list">
     {
-      navigation.map((section) => {
-        // Determine if section is expanded and underlined by seeing if current path matches
-        // page or one of the subpages.
-        const sectionExpand =
-          pathname === section.href ||
-          section.links.map((value) => value.href).includes(pathname);
-
-        return (
-          <li class="mb-4">
-            <h2
+      navigation.map((section) => (
+        <li class="mb-4">
+          <h2 class="lg:text-lg font-display font-medium text-neutral-900 mt-2">
+            <a
+              href={section.href}
               class={clsx(
-                'lg:text-lg font-display font-medium text-neutral-900 mt-2 underline-offset-4',
-                sectionExpand ? 'underline' : 'hover:underline'
+                'block w-full underline-offset-4 transition-all duration-200'
               )}
+              data-astro-prefetch
             >
-              {section.title === 'Experience' && section.title}
-              {section.title !== 'Experience' && (
-                <a href={section.href} data-swup-preload>
-                  {section.title}
-                </a>
-              )}
-            </h2>
-            {(sectionExpand || section.title === 'Experience') && (
-              <ul
-                role="list"
-                class="mt-2 space-y-2 border-l-2 border-neutral-100 lg:mt-4 lg:space-y-4 lg:border-neutral-200"
-              >
-                {section.links.map((link) => (
-                  <li class="relative">
-                    <a
-                      href={link.href}
-                      class={clsx(
-                        'block w-full pl-3.5 before:pointer-events-none before:absolute before:-left-1 before:top-1/2 before:h-1.5 before:w-1.5 before:-translate-y-1/2 before:rounded-full',
-                        link.href === pathname
-                          ? 'font-semibold text-neutral-800 before:bg-stone-400'
-                          : 'text-stone-600 before:hidden before:bg-stone-300 hover:text-stone-600 hover:before:block'
-                      )}
-                    >
-                      {link.title}
-                    </a>
-                  </li>
-                ))}
-              </ul>
+              {section.title}
+            </a>
+          </h2>
+          <ul
+            role="list"
+            class={clsx(
+              'mt-2 space-y-2 border-l-2 border-slate-100 lg:mt-4 lg:space-y-4 lg:border-slate-200',
+              section.title === 'Artwork' && 'artwork-submenu'
             )}
-          </li>
-        );
-      })
+          >
+            {section.links.map((link) => (
+              <li class="relative">
+                <a
+                  href={link.href}
+                  class={clsx(
+                    'block w-full pl-3.5 text-sm before:pointer-events-none before:absolute before:-left-1 before:top-1/2 before:h-1.5 before:w-1.5 before:-translate-y-1/2 before:rounded-full',
+                    'text-neutral-600 before:hidden before:bg-slate-300 hover:text-neutral-900 hover:before:block'
+                  )}
+                  data-astro-prefetch
+                >
+                  {link.title}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </li>
+      ))
     }
   </ul>
 </nav>
+
+<script>
+  import { updateNavigation } from '../scripts/navigation';
+
+  document.addEventListener('astro:page-load', updateNavigation);
+  document.addEventListener('astro:after-swap', updateNavigation);
+</script>

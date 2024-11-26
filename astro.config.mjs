@@ -12,4 +12,9 @@ export default defineConfig({
     quality: 80,
     densities: [1, 2],
   },
+  viewTransitions: true,
+  prefetch: {
+    prefetchAll: true,
+    defaultStrategy: 'hover',
+  },
 });

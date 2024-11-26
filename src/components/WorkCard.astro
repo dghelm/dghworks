@@ -19,7 +19,11 @@ const frontImages = [frontImage0, frontImage1, frontImage2, frontImage3].filter(
     <div
       class={`work-card work-${index} bg-zinc-900 bg-gradient-to-b from-stone-700 to-zinc-800 transition-opacity hover:opacity-95 aspect-square`}
     >
-      <a href={`/works/${work.slug}`} class="work-link block h-full">
+      <a
+        href={`/works/${work.slug}`}
+        class="work-link block h-full"
+        data-astro-prefetch
+      >
         <Image
           src={frontImage}
           width={Math.max(
