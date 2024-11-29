@@ -1,20 +1,22 @@
 ---
-import { Picture } from "@astrojs/image/components";
+import { Picture } from 'astro:assets';
 
 export interface Props {
-	alt: string;
-	src: any;
+  alt: string;
+  src: any;
 }
 
 const { alt, src } = Astro.props as Props;
 ---
 
 <div class="mb-4">
-	<Picture
-		src={src}
-		sizes="(min-width: 1px)"
-		formats={["avif", "webp"]}
-		widths={[1000]}
-		alt={alt}
-	/>
+  <Picture
+    src={src}
+    sizes="(min-width: 1440px) 1280px, (min-width: 720px) 720px, 100vw"
+    formats={['avif', 'webp']}
+    widths={[720, 1280, 1920]}
+    loading="lazy"
+    decoding="async"
+    alt={alt}
+  />
 </div>

@@ -1,40 +1,59 @@
 ---
-import Header from "../components/Header.astro";
-import "@fontsource/open-sans";
+import Header from '../components/Header.astro';
+import '@fontsource/open-sans';
+import SpeedInsights from '@vercel/speed-insights/astro';
+import { ViewTransitions } from 'astro:transitions';
 
 export interface Props {
-	title?: string;
+  title?: string;
 }
 
 const { title } = Astro.props as Props;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
-		<meta name="generator" content={Astro.generator} />
-		<title>
-			{
-				title
-					? `${title} | Daniel Helm Works`
-					: "Daniel Helm Works"
-			}
-		</title>
-	</head>
-	<body>
-		<Header />
-		<main
-			class="z-0 border-t border-slate-200 lg:relative lg:mb-28 lg:ml-112 lg:border-t-0 xl:ml-120"
-		>
-			<div class="relative swup-transition-opacity" id="swup">
-				<slot />
-			</div>
-		</main>
-		<script>
-			import "./app.js";
-		</script>
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
+    <title>
+      {title ? `${title} | Daniel Helm Works` : 'Daniel Helm Works'}
+    </title>
+    <ViewTransitions />
+  </head>
+  <body>
+    <Header transition:persist="header" />
+    <main
+      class="z-0 border-t border-slate-200 lg:relative lg:mb-28 lg:ml-112 lg:border-t-0 xl:ml-120"
+      transition:animate="fade"
+      transition:duration="300"
+    >
+      <div class="relative">
+        <slot />
+      </div>
+    </main>
+    <SpeedInsights />
+  </body>
 </html>
+
+<script>
+  // Scroll main content to top on navigation, but preserve header scroll
+  document.addEventListener('astro:after-navigation', () => {
+    const mainContent = document.querySelector('main');
+    mainContent?.scrollTo(0, 0);
+  });
+</script>
+
+<style>
+  /* Optional: Add custom transition styles */
+  :root {
+    --transition-duration: 300ms;
+  }
+
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation-duration: var(--transition-duration);
+  }
+</style>

@@ -1,40 +1,46 @@
 ---
-import { Image, Picture } from "@astrojs/image/components";
+import { Image } from 'astro:assets';
 
 export interface Props {
-	work: any;
-	index: number;
+  work: any;
+  index: number;
 }
 
-const { work, index } = Astro.props as Props;
-const {
-	title,
-	description,
-	frontImage0,
-	frontImage1,
-	frontImage2,
-	frontImage3,
-} = work.frontmatter;
+const { work, index } = Astro.props;
+const { frontImage0, frontImage1, frontImage2, frontImage3, title } = work.data;
 
-// list of all frontImages, filtering out undefined.
 const frontImages = [frontImage0, frontImage1, frontImage2, frontImage3].filter(
-	(e) => !!e
+  (img) => !!img
 );
 ---
 
 {
-	frontImages.map((frontImage) => (
-		<div
-			class={`work-card work-${index} bg-zinc-900 bg-gradient-to-b from-stone-700 to-zinc-800 transition-opacity hover:opacity-95`}
-		>
-			<a href={work.url} class="work-link">
-				<Image
-					src={frontImage}
-					width={416}
-					aspectRatio={1}
-					alt={title}
-				/>
-			</a>
-		</div>
-	))
+  frontImages.map((frontImage) => (
+    <div
+      class={`work-card work-${index} bg-zinc-900 bg-gradient-to-b from-stone-700 to-zinc-800 transition-opacity hover:opacity-95 aspect-square`}
+    >
+      <a
+        href={`/works/${work.slug}`}
+        class="work-link block h-full"
+        data-astro-prefetch
+      >
+        <Image
+          src={frontImage}
+          width={Math.max(
+            416,
+            Math.round((416 * frontImage.width) / frontImage.height)
+          )}
+          height={Math.max(
+            416,
+            Math.round((416 * frontImage.height) / frontImage.width)
+          )}
+          alt={title}
+          class="object-cover w-full h-full"
+          loading="lazy"
+          decoding="async"
+          format="avif"
+        />
+      </a>
+    </div>
+  ))
 }

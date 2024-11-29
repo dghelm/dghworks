@@ -1,22 +1,19 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import WorkCard from "../components/WorkCard.astro";
+import Layout from '../layouts/Layout.astro';
+import WorkCard from '../components/WorkCard.astro';
+import { getCollection } from 'astro:content';
 
-// Also, you can import multiple files with Astro.glob
-let works = await Astro.glob("./works/*.mdx");
-works.sort((a, b) => a.frontmatter.priority - b.frontmatter.priority);
+// Get all works from the content collection
+const works = await getCollection('works');
+works.sort((a, b) => a.data.priority - b.data.priority);
 ---
 
 <Layout title="Works">
-	<main class="max-w-7xl my-12 mx-auto px-6 lg:px-12">
-		<div
-			class="grid md:grid-cols-3 grid-cols-2 xl:gap-4 gap-2 place-content-start"
-		>
-			{
-				works.map((work, index) => (
-					<WorkCard work={work} index={index} />
-				))
-			}
-		</div>
-	</main>
+  <main class="max-w-7xl my-12 mx-auto px-6 lg:px-12">
+    <div
+      class="grid md:grid-cols-3 grid-cols-2 xl:gap-4 gap-2 place-content-start"
+    >
+      {works.map((work, index) => <WorkCard work={work} index={index} />)}
+    </div>
+  </main>
 </Layout>
